@@ -14,10 +14,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  experimental: {
-    turbo: {
-      root: path.resolve(__dirname), // Fix: tell Turbopack the root is THIS directory
-    },
+  turbopack: {
+    root: path.resolve(__dirname), // Fix: tell Turbopack the root is THIS directory
   },
 };
 

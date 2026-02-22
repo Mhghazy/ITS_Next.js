@@ -3,6 +3,8 @@ import fs from 'fs';
 import path from 'path';
 
 // Read blog posts directly from the filesystem — no Keystatic dependency at build time
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     try {
         const postsDir = path.join(process.cwd(), 'src/content/posts');
