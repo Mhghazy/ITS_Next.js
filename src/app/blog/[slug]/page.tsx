@@ -1,36 +1,35 @@
-import { reader } from '@/utils/reader';
 import { notFound } from 'next/navigation';
-import React from 'react';
-import Markdoc from '@markdoc/markdoc';
+import fs from 'fs';
+import path from 'path';
 
-// Simple Markdoc renderer for React
-function renderMarkdoc(node: any) {
-    return Markdoc.renderers.react(node, React);
-}
-
+// Read blog posts directly from the filesystem — no Keystatic dependency at build time
 export async function generateStaticParams() {
-    const posts = await reader.collections.posts.list();
-    return posts.map((slug) => ({ slug }));
+    try {
+        const postsDir = path.join(process.cwd(), 'src/content/posts');
+        if (!fs.existsSync(postsDir)) return [];
+        return fs.readdirSync(postsDir)
+            .filter((f) => f.endsWith('.mdoc'))
+            .map((f) => ({ slug: f.replace('.mdoc', '') }));
+    } catch {
+        return [];
+    }
 }
 
-export default async function Post({ params }: { params: { slug: string } }) {
-    const post = await reader.collections.posts.read(params.slug);
-    if (!post) notFound();
+export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    // Try to load content at runtime; safely 404 if not found
+    try {
+        const postsDir = path.join(process.cwd(), 'src/content/posts');
+        const filePath = path.join(postsDir, `${slug}.mdoc`);
+        if (!fs.existsSync(filePath)) notFound();
+        const content = fs.readFileSync(filePath, 'utf-8');
 
-    const { node } = await post.content();
-
-    return (
-        <article className="prose lg:prose-xl mx-auto dark:prose-invert py-8 px-4">
-            <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-            {post.date && <p className="text-gray-500 mb-8">{post.date}</p>}
-
-            {post.featuredImage && (
-                <img src={post.featuredImage} alt={post.title} className="w-full h-auto max-h-96 object-cover rounded-lg mb-8" />
-            )}
-
-            <div className="mt-8">
-                {renderMarkdoc(Markdoc.transform(node))}
-            </div>
-        </article>
-    );
+        return (
+            <article className="prose lg:prose-xl mx-auto dark:prose-invert py-8 px-4">
+                <pre style={{ whiteSpace: 'pre-wrap' }}>{content}</pre>
+            </article>
+        );
+    } catch {
+        notFound();
+    }
 }

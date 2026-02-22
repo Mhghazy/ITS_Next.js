@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
-  output: "export",        // Static HTML export for GitHub Pages
+  output: "export",         // Static HTML export for GitHub Pages
   basePath: "/ITS_Next.js", // Must match GitHub repo name
   images: {
-    unoptimized: true,     // Required for static export (no server-side image optimization)
+    unoptimized: true,      // Required for static export
     remotePatterns: [
       {
         protocol: 'https',
@@ -12,6 +13,11 @@ const nextConfig: NextConfig = {
         pathname: '/wp-content/uploads/**',
       },
     ],
+  },
+  experimental: {
+    turbo: {
+      root: path.resolve(__dirname), // Fix: tell Turbopack the root is THIS directory
+    },
   },
 };
 
