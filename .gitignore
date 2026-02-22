@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large image assets with Arabic filenames (Windows git limitation)
+# Re-add via Git LFS or host externally if needed
+/public/assets/images/
