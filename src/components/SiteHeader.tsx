@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { PhoneIcon, EnvelopeIcon } from '@heroicons/react/20/solid';
+import { getAssetUrl } from '@/utils/paths';
 
 // Navigation Data
 const navigation = [
@@ -80,7 +81,7 @@ export default function SiteHeader() {
                     <Link href="/">
                         <Image
                             className="h-28 w-auto object-contain"
-                            src="/assets/logo-full.png"
+                            src={getAssetUrl("/assets/logo-full.png")}
                             alt="ITS Group"
                             width={220}
                             height={112}
@@ -228,7 +229,7 @@ export default function SiteHeader() {
                     {/* Mobile Logo (Visible only on mobile) */}
                     <div className="lg:hidden flex items-center">
                         <Link href="/">
-                            <Image className="h-12 w-auto" src="/assets/logo-full.png" alt="ITS Group" width={150} height={48} />
+                            <Image className="h-12 w-auto" src={getAssetUrl("/assets/logo-full.png")} alt="ITS Group" width={150} height={48} />
                         </Link>
                     </div>
                 </div>
@@ -239,7 +240,7 @@ export default function SiteHeader() {
                     {/* Sea Star Image */}
                     <div className="relative h-40 w-40 mb-2 -z-10">
                         <Image
-                            src="/assets/sea-star.png"
+                            src={getAssetUrl("/assets/sea-star.png")}
                             alt="Sea Star"
                             fill
                             className="object-contain drop-shadow-md"
@@ -296,7 +297,7 @@ export default function SiteHeader() {
                     <div className="flex items-center justify-between">
                         <Link href="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">ITS Group</span>
-                            <Image className="h-12 w-auto" src="/assets/logo-full.png" alt="ITS Group" width={150} height={48} />
+                            <Image className="h-12 w-auto" src={getAssetUrl("/assets/logo-full.png")} alt="ITS Group" width={150} height={48} />
                         </Link>
                         <button
                             type="button"

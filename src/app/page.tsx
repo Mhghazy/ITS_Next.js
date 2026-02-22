@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Droplets, Building2, Wrench, CheckCircle2, ArrowRightCircle, Phone, Award, Check } from "lucide-react";
+import { getAssetUrl } from '@/utils/paths';
 
 // Animation variants
 const fadeInUp = {
@@ -26,7 +27,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[calc(100vh-100px)] flex items-start justify-center pt-20 bg-[var(--color-primary)] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/assets/hero.jpg" alt="Luxury Swimming Pool" fill className="object-cover opacity-100 object-bottom" priority />
+          <Image src={getAssetUrl("/assets/hero.jpg")} alt="Luxury Swimming Pool" fill className="object-cover opacity-100 object-bottom" priority />
 
         </div>
         <motion.div
@@ -76,7 +77,7 @@ export default function Home() {
                 <div className="elementor-widget-container flex justify-center">
                   <div className="relative w-24 h-24">
                     <Image
-                      src="/assets/images/orange-money.png"
+                      src={getAssetUrl("/assets/images/orange-money.png")}
                       alt="A Pool Within Your Budget"
                       fill
                       className="object-contain"
@@ -123,7 +124,7 @@ export default function Home() {
                 <div className="elementor-widget-container flex justify-center">
                   <div className="relative w-24 h-24">
                     <Image
-                      src="/assets/images/Orange-time.png"
+                      src={getAssetUrl("/assets/images/Orange-time.png")}
                       alt="Timely & Efficient Building"
                       fill
                       className="object-contain"
@@ -211,7 +212,7 @@ export default function Home() {
           >
             <div className="relative rounded-2xl overflow-hidden h-full group">
               <Image
-                src="/assets/hero.jpg"
+                src={getAssetUrl("/assets/hero.jpg")}
                 alt="Luxury Pool"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -220,7 +221,7 @@ export default function Home() {
             </div>
             <div className="relative rounded-2xl overflow-hidden h-full group mt-12">
               <Image
-                src="/assets/images/1-768x576.jpg"
+                src={getAssetUrl("/assets/images/1-768x576.jpg")}
                 alt="Residential Pool"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
