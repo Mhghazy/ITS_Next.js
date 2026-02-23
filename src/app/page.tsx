@@ -200,39 +200,42 @@ export default function Home() {
 
       {/* About Us & Stats Section */}
       <section className="py-24 px-6 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+        <div className="max-w-[1140px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
-          {/* Left Column: Image Accordion / Grid */}
+          {/* Left Column: Image Accordion */}
           <motion.div
-            className="grid grid-cols-2 gap-4 h-[500px]"
+            className="flex gap-4 h-[500px] w-full group/accordion"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative rounded-2xl overflow-hidden h-full group">
+            {/* Accordion Item 1 */}
+            <div className="relative rounded-2xl overflow-hidden h-full w-1/2 group-hover/accordion:w-[30%] hover:!w-[70%] transition-all duration-700 ease-in-out cursor-pointer group/item">
               <Image
                 src={getAssetUrl("/assets/hero.jpg")}
                 alt="Luxury Pool"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+              {/* Optional slight dark overlay that clears on hover */}
+              <div className="absolute inset-0 bg-black/20 group-hover/item:bg-transparent transition-colors duration-500"></div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden h-full group mt-12">
+            {/* Accordion Item 2 */}
+            <div className="relative rounded-2xl overflow-hidden h-full w-1/2 group-hover/accordion:w-[30%] hover:!w-[70%] transition-all duration-700 ease-in-out cursor-pointer group/item">
               <Image
                 src={getAssetUrl("/assets/images/1-768x576.jpg")}
                 alt="Residential Pool"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+              <div className="absolute inset-0 bg-black/20 group-hover/item:bg-transparent transition-colors duration-500"></div>
             </div>
           </motion.div>
 
           {/* Right Column: Content */}
           <motion.div
-            className="flex flex-col justify-center h-full pt-8"
+            className="flex flex-col justify-center h-full w-full"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
