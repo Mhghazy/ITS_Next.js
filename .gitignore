@@ -42,4 +42,7 @@ next-env.d.ts
 
 # Large image assets with Arabic filenames (Windows git limitation)
 # Re-add via Git LFS or host externally if needed
-/public/assets/images/
+public/assets/images/*
+!public/assets/images/orange-money.png
+!public/assets/images/Orange-time.png
+!public/assets/images/1-768x576.jpg
