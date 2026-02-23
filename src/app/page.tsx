@@ -235,104 +235,59 @@ export default function Home() {
 
           {/* Right Column: Content */}
           <motion.div
-            className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-681d667"
+            className="flex flex-col justify-center h-full w-full"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="elementor-widget-wrap elementor-element-populated">
-              <section className="elementor-section elementor-inner-section elementor-element elementor-element-b7c2dca elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b7c2dca" data-element_type="section" data-settings='{"_ha_eqh_enable":false}' >
-                <div className="elementor-container elementor-column-gap-default">
-                  <div className="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-9c85888 animated-slow animated fadeIn" data-id="9c85888" data-element_type="column" data-settings='{"background_background":"classic","animation_delay":800}'>
-                    <div className="elementor-widget-wrap elementor-element-populated">
-                      <div className="elementor-background-overlay"></div>
-                      <div className="elementor-element elementor-element-66212e9 animated-slow elementor-widget elementor-widget-heading animated fadeIn" data-id="66212e9" data-element_type="widget" data-settings='{"_animation_delay":900}' data-widget_type="heading.default">
-                        <div className="elementor-widget-container">
-                          <h2 className="elementor-heading-title elementor-size-default">About Us</h2>
-                        </div>
-                      </div>
-                      <div className="elementor-element elementor-element-18b059c animated-slow elementor-widget elementor-widget-heading animated fadeIn" data-id="18b059c" data-element_type="widget" data-settings='{"_animation_delay":1000}' data-widget_type="heading.default">
-                        <div className="elementor-widget-container">
-                          <h2 className="elementor-heading-title elementor-size-default">Let’s bring your dream pool to life</h2>
-                        </div>
-                      </div>
-                      <div className="elementor-element elementor-element-3297ea9 animated-slow elementor-widget elementor-widget-text-editor animated fadeIn" data-id="3297ea9" data-element_type="widget" data-settings='{"_animation_delay":1100}' data-widget_type="text-editor.default">
-                        <div className="elementor-widget-container">
-                          <p>At ITS Group, we bring creativity and innovation to every project. Our extensive gallery showcases a diverse range of water features, including luxurious pools, artistic water displays, and functional leisure spaces. Whether you seek relaxation or elegance, our designs transform your vision into reality.</p>
-                        </div>
-                      </div>
-                      <div className="elementor-element elementor-element-c5b76bd elementor-align-left elementor-align--mobilecenter animated-slow elementor-widget elementor-widget-elementskit-button animated fadeIn" data-id="c5b76bd" data-element_type="widget" data-settings='{"_animation":"fadeIn","_animation_delay":1500}' data-widget_type="elementskit-button.default">
-                        <div className="elementor-widget-container">
-                          <div className="ekit-wid-con">
-                            <div className="ekit-btn-wraper">
-                              <Link href="/about" className="elementskit-btn whitespace--normal" id="">
-                                <i className="fas fa-arrow-alt-circle-right"></i>Learn more
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section className="elementor-section elementor-inner-section elementor-element elementor-element-744bc10 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="744bc10" data-element_type="section" data-settings='{"_ha_eqh_enable":false}'>
-                <div className="elementor-container elementor-column-gap-default">
-                  <div className="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-d11332c animated-slow animated fadeIn" data-id="d11332c" data-element_type="column" data-settings='{"animation":"fadeIn","animation_delay":1400}'>
-                    <div className="elementor-widget-wrap elementor-element-populated">
-                      <div className="elementor-element elementor-element-48adebd elementor-widget-mobile__width-inherit elementor-widget elementor-widget-counter" data-id="48adebd" data-element_type="widget" data-widget_type="counter.default">
-                        <div className="elementor-widget-container">
-                          <div className="elementor-counter">
-                            <div className="elementor-counter-title">Years of Experience</div>
-                            <div className="elementor-counter-number-wrapper">
-                              <span className="elementor-counter-number-prefix"></span>
-                              <span className="elementor-counter-number" data-duration="2000" data-to-value="30" data-from-value="0" data-delimiter=",">30</span>
-                              <span className="elementor-counter-number-suffix"></span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="elementor-element elementor-element-1ae0970 elementor-view-default elementor-widget elementor-widget-icon" data-id="1ae0970" data-element_type="widget" data-widget_type="icon.default">
-                        <div className="elementor-widget-container">
-                          <div className="elementor-icon-wrapper">
-                            <div className="elementor-icon">
-                              <i aria-hidden="true" className="icon icon-badge"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-5e82301 animated-slow animated fadeIn" data-id="5e82301" data-element_type="column" data-settings='{"animation":"fadeIn","animation_delay":1600}'>
-                    <div className="elementor-widget-wrap elementor-element-populated">
-                      <div className="elementor-element elementor-element-7b99ea7 elementor-widget elementor-widget-counter" data-id="7b99ea7" data-element_type="widget" data-widget_type="counter.default">
-                        <div className="elementor-widget-container">
-                          <div className="elementor-counter">
-                            <div className="elementor-counter-title">Projects</div>
-                            <div className="elementor-counter-number-wrapper">
-                              <span className="elementor-counter-number-prefix">+</span>
-                              <span className="elementor-counter-number" data-duration="2000" data-to-value="500" data-from-value="0" data-delimiter=",">500</span>
-                              <span className="elementor-counter-number-suffix"></span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="elementor-element elementor-element-0465424 elementor-view-default elementor-widget elementor-widget-icon" data-id="0465424" data-element_type="widget" data-widget_type="icon.default">
-                        <div className="elementor-widget-container">
-                          <div className="elementor-icon-wrapper">
-                            <div className="elementor-icon">
-                              <i aria-hidden="true" className="huge huge-pool"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+            {/* Super Heading */}
+            <div className="flex items-center gap-3 mb-2">
+              <span className="w-12 h-[2px] bg-[var(--color-primary)]"></span>
+              <h2 className="text-[var(--color-primary)] font-bold text-sm md:text-base uppercase tracking-[0.2em]">About Us</h2>
             </div>
+
+            {/* Main Heading */}
+            <h3 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-[1.15]">
+              Let’s bring your <span className="text-[var(--color-primary)] relative whitespace-nowrap">dream pool<svg className="absolute w-full h-3 -bottom-1 left-0 text-[var(--color-secondary)]/30 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 -5 100 5" stroke="currentColor" strokeWidth="8" fill="none" /></svg></span> to life
+            </h3>
+
+            {/* Paragraph Description */}
+            <p className="text-gray-600 mb-8 text-lg font-light leading-[1.8]">
+              At ITS Group, we bring creativity and innovation to every project. Our extensive gallery showcases a diverse range of water features, including luxurious pools, artistic water displays, and functional leisure spaces. Whether you seek relaxation or elegance, our designs transform your vision into reality.
+            </p>
+
+            {/* CTA Button */}
+            <div className="mb-12">
+              <Link href="/about" className="group inline-flex items-center gap-3 bg-[var(--color-primary)] text-white px-8 py-3.5 rounded-full font-bold text-base hover:bg-[var(--color-secondary)] hover:text-[var(--color-primary)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                Learn more
+                <ArrowRightCircle className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+
+            {/* Premium Stat Cards */}
+            <div className="grid grid-cols-2 gap-6 pt-8 border-t border-gray-100">
+
+              {/* Stat 1 */}
+              <div className="group flex flex-col items-start p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-[var(--color-primary)]/20 transition-all duration-300">
+                <div className="bg-[var(--color-primary)] text-white p-3.5 rounded-xl mb-4 group-hover:scale-110 group-hover:bg-[var(--color-secondary)] group-hover:text-[var(--color-primary)] transition-all duration-300 shadow-sm">
+                  <CheckCircle2 className="w-6 h-6" />
+                </div>
+                <div className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-1">30+</div>
+                <div className="text-gray-500 font-medium text-sm tracking-wide uppercase">Years of Experience</div>
+              </div>
+
+              {/* Stat 2 */}
+              <div className="group flex flex-col items-start p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-[var(--color-primary)]/20 transition-all duration-300">
+                <div className="bg-[var(--color-primary)] text-white p-3.5 rounded-xl mb-4 group-hover:scale-110 group-hover:bg-[var(--color-secondary)] group-hover:text-[var(--color-primary)] transition-all duration-300 shadow-sm">
+                  <Droplets className="w-6 h-6" />
+                </div>
+                <div className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-1">500+</div>
+                <div className="text-gray-500 font-medium text-sm tracking-wide uppercase">Projects Completed</div>
+              </div>
+
+            </div>
+
           </motion.div>
         </div>
       </section>
