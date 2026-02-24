@@ -581,63 +581,63 @@ export default function Home() {
 
       {/* Why Choose Us Section */}
       <section className="py-20 px-6 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-12 items-center mb-16">
-            <div className="w-full md:w-1/3">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-[var(--color-primary)] font-bold text-4xl uppercase tracking-wider relative pl-6 border-l-4 border-[var(--color-secondary)]">Why Choose Us?</h2>
-              </motion.div>
-            </div>
-            <div className="w-full md:w-2/3 grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Expert Project Management",
-                  desc: "Each project is assigned a dedicated project manager and supervisor to ensure a smooth construction process and deliver top-quality results. Our specialized permit team works to expedite city permit applications, minimizing any potential delays."
-                },
-                {
-                  title: "Custom Designs",
-                  desc: "At ITS Group, we bring your vision to life! Our professionals create tailor-made designs that cater to your specific needs, ensuring a unique and personalized experience."
-                },
-                {
-                  title: "Comprehensive Services",
-                  desc: "From initial concept and design to construction, installation, and maintenance, we provide end-to-end solutions to bring your dream pool to reality."
-                },
-                {
-                  title: "Seamless Process",
-                  desc: "Our experts track and manage each project from feasibility studies and site surveys to equipment selection, installation, and commissioning, ensuring every step meets the highest standards. Technical support for clients through site visits, inspections, technical advice & reports."
-                },
-                {
-                  title: "Reliable After-Sales Support",
-                  desc: "We offer ongoing support, including operation & maintenance contracts, equipment supply, spare parts, and technical assistance through site visits, inspections, and expert advice."
-                }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="flex gap-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <div className="flex-shrink-0 w-12 h-12">
-                    <img
-                      src="https://itsgroup-co.com/wp-content/uploads/2025/08/orange-check-mark-circular-tick-16216.png"
-                      alt="Check"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[var(--color-primary)] mb-2">{item.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+        <div className="max-w-[1140px] mx-auto text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-block"
+          >
+            <h2 className="text-[var(--color-primary)] font-bold text-4xl uppercase tracking-wider relative px-6 border-l-4 border-r-4 border-[var(--color-secondary)]">Why Choose Us?</h2>
+          </motion.div>
+        </div>
+
+        <div className="max-w-[1140px] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+          {[
+            {
+              title: "Expert Project Management",
+              desc: "Each project is assigned a dedicated project manager and supervisor to ensure a smooth construction process and deliver top-quality results. Our specialized permit team works to expedite city permit applications, minimizing any potential delays."
+            },
+            {
+              title: "Custom Designs",
+              desc: "At ITS Group, we bring your vision to life! Our professionals create tailor-made designs that cater to your specific needs, ensuring a unique and personalized experience."
+            },
+            {
+              title: "Comprehensive Services",
+              desc: "From initial concept and design to construction, installation, and maintenance, we provide end-to-end solutions to bring your dream pool to reality."
+            },
+            {
+              title: "Seamless Process",
+              desc: "Our experts track and manage each project from feasibility studies and site surveys to equipment selection, installation, and commissioning, ensuring every step meets the highest standards. Technical support for clients through site visits, inspections, technical advice & reports."
+            },
+            {
+              title: "Reliable After-Sales Support",
+              desc: "We offer ongoing support, including operation & maintenance contracts, equipment supply, spare parts, and technical assistance through site visits, inspections, and expert advice."
+            }
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="flex flex-col items-center text-center p-10 bg-white shadow-[0_10px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] hover:-translate-y-3 transition-all duration-500 rounded-2xl w-full flex-grow border border-gray-100"
+            >
+              <div className="mb-6 flex justify-center">
+                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-[var(--color-primary)]/5 p-3">
+                  <img
+                    src="https://itsgroup-co.com/wp-content/uploads/2025/08/orange-check-mark-circular-tick-16216.png"
+                    alt="Check"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-[var(--color-primary)] mb-4">{item.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed font-light flex-grow">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
