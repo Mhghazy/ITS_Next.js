@@ -581,18 +581,21 @@ export default function Home() {
 
       {/* Why Choose Us Section */}
       <section className="py-20 px-6 bg-white overflow-hidden">
-        <div className="max-w-[1140px] mx-auto text-center mb-16">
+        <div className="max-w-[1140px] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+
+          {/* Header Card */}
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block"
+            className="flex flex-col items-center justify-center text-center p-10 bg-[var(--color-primary)] shadow-[0_10px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] hover:-translate-y-3 transition-all duration-500 rounded-2xl w-full flex-grow border border-gray-100 min-h-[300px]"
           >
-            <h2 className="text-[var(--color-primary)] font-bold text-4xl uppercase tracking-wider relative px-6 border-l-4 border-r-4 border-[var(--color-secondary)]">Why Choose use ?</h2>
+            <h2 className="text-white font-bold text-4xl leading-tight uppercase tracking-wider relative px-6 border-l-4 border-r-4 border-[var(--color-secondary)]">
+              Why Choose use ?
+            </h2>
           </motion.div>
-        </div>
 
-        <div className="max-w-[1140px] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+          {/* Feature Cards */}
           {[
             {
               title: "Expert Project Management",
