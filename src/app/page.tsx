@@ -260,7 +260,7 @@ export default function Home() {
 
                 {/* Main Heading */}
                 <h3 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-[1.15]">
-                  Let’s bring your <span className="text-[var(--color-primary)] relative whitespace-nowrap">dream pool<svg className="absolute w-full h-3 -bottom-1 left-0 text-[var(--color-secondary)]/30 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 -5 100 5" stroke="currentColor" strokeWidth="8" fill="none" /></svg></span> to life
+                  Let’s bring your <span className="text-[var(--color-primary)]">dream pool</span> to life
                 </h3>
 
                 {/* Paragraph Description */}
