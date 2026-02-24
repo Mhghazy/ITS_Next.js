@@ -639,43 +639,73 @@ export default function Home() {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-20 px-6 bg-gray-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            {/* Left Column - Images */}
-            <div className="w-full lg:w-1/2 flex gap-4 h-[500px]">
-              <div className="w-1/2 h-full relative rounded-2xl overflow-hidden group">
-                <img
-                  src="https://itsgroup-co.com/wp-content/uploads/2025/04/5kWRpgsp-1025x1536-1.jpeg"
-                  alt="Value Image 1"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
-              </div>
-              <div className="w-1/2 h-full relative rounded-2xl overflow-hidden group">
-                <img
-                  src="https://itsgroup-co.com/wp-content/uploads/2025/04/IMG_0322-1-1536x1024-1.jpg"
-                  alt="Value Image 2"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
-              </div>
-            </div>
+      <section className="py-24 px-6 bg-gray-50 overflow-hidden">
+        <div className="max-w-[1140px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
-            {/* Right Column - Text Content */}
-            <div className="w-full lg:w-1/2">
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-[var(--color-secondary)] font-bold text-lg uppercase tracking-wider mb-2">Our Values</h3>
-                <h2 className="text-4xl font-bold text-[var(--color-primary)] mb-6">Our Company Values</h2>
-                <p className="text-gray-600 mb-8 text-lg">
+          {/* Left Column - Image Accordion */}
+          <motion.div
+            className="flex gap-4 h-[450px] lg:h-[540px] w-full group/accordion order-2 lg:order-1"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Accordion Item 1 */}
+            <div className="relative rounded-2xl overflow-hidden h-full w-1/2 group-hover/accordion:w-[30%] hover:!w-[70%] transition-all duration-700 ease-in-out cursor-pointer group/item">
+              <img
+                src="https://itsgroup-co.com/wp-content/uploads/2025/04/5kWRpgsp-1025x1536-1.jpeg"
+                alt="Value Image 1"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover/item:bg-transparent transition-colors duration-500"></div>
+            </div>
+            {/* Accordion Item 2 */}
+            <div className="relative rounded-2xl overflow-hidden h-full w-1/2 group-hover/accordion:w-[30%] hover:!w-[70%] transition-all duration-700 ease-in-out cursor-pointer group/item">
+              <img
+                src="https://itsgroup-co.com/wp-content/uploads/2025/04/IMG_0322-1-1536x1024-1.jpg"
+                alt="Value Image 2"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover/item:bg-transparent transition-colors duration-500"></div>
+            </div>
+          </motion.div>
+
+          {/* Right Column - Text Content */}
+          <motion.div
+            className="flex flex-col justify-center h-full w-full order-1 lg:order-2"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {/* Boxed Text Content Area with Hover Animation */}
+            <div className="relative p-[2px] rounded-3xl mb-0 overflow-hidden group shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+
+              {/* Spinning gradient border (only visible on hover) */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,#0a192f_0%,#ffd700_50%,#0a192f_100%)] z-0 pointer-events-none" />
+
+              {/* Default static border */}
+              <div className="absolute inset-0 border border-gray-200 rounded-3xl group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none" />
+
+              {/* Inner White Content Container */}
+              <div className="relative z-20 bg-white p-8 md:p-10 rounded-[22px] h-full w-full">
+                {/* Super Heading */}
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="w-12 h-[2px] bg-[var(--color-primary)]"></span>
+                  <h2 className="text-[var(--color-primary)] font-bold text-sm md:text-base uppercase tracking-[0.2em]">Our Values</h2>
+                </div>
+
+                {/* Main Heading */}
+                <h3 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-[1.15]">
+                  Our Company Values
+                </h3>
+
+                {/* Paragraph Description */}
+                <p className="text-gray-600 mb-8 text-lg font-light leading-[1.8]">
                   At ITS Group, our core values drive every project we undertake, ensuring:
                 </p>
 
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid md:grid-cols-2 gap-8 items-start">
                   {/* List */}
                   <ul className="space-y-4">
                     {[
@@ -684,29 +714,29 @@ export default function Home() {
                       "Integrity and Transparency",
                       "Sustainability & Responsibility"
                     ].map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-3">
-                        <span className="w-6 h-6 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center flex-shrink-0">
-                          <Check className="w-4 h-4 text-[var(--color-primary)]" />
+                      <li key={idx} className="flex items-center gap-3 group/li">
+                        <span className="w-8 h-8 rounded-full bg-[var(--color-primary)]/10 group-hover/li:bg-[var(--color-primary)] transition-colors duration-300 flex items-center justify-center flex-shrink-0">
+                          <Check className="w-4 h-4 text-[var(--color-primary)] group-hover/li:text-white transition-colors duration-300" />
                         </span>
-                        <span className="text-gray-700 font-medium">{item}</span>
+                        <span className="text-gray-700 font-medium group-hover/li:text-[var(--color-primary)] transition-colors duration-300">{item}</span>
                       </li>
                     ))}
                   </ul>
 
                   {/* Icon Box */}
-                  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <div className="w-12 h-12 bg-[var(--color-secondary)]/10 rounded-lg flex items-center justify-center mb-4">
-                      <Award className="w-6 h-6 text-[var(--color-secondary)]" />
+                  <div className="bg-gray-50 border border-gray-100 p-6 rounded-2xl hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-[var(--color-primary)]/20 transition-all duration-300 group/box">
+                    <div className="w-12 h-12 bg-[var(--color-primary)] text-white rounded-xl flex items-center justify-center mb-4 group-hover/box:scale-110 group-hover/box:bg-[var(--color-secondary)] group-hover/box:text-[var(--color-primary)] transition-all duration-300 shadow-sm">
+                      <Award className="w-6 h-6" />
                     </div>
-                    <h4 className="text-lg font-bold text-[var(--color-primary)] mb-2">Quality & Craftsmanship</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <h4 className="text-lg font-extrabold text-gray-900 mb-2">Quality & Craftsmanship</h4>
+                    <p className="text-gray-500 font-medium text-sm leading-relaxed">
                       We prioritize top-tier materials and expert workmanship to deliver long-lasting, high-performance pools.
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
