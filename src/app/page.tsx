@@ -588,7 +588,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="inline-block"
           >
-            <h2 className="text-[var(--color-primary)] font-bold text-4xl uppercase tracking-wider relative px-6 border-l-4 border-r-4 border-[var(--color-secondary)]">Why Choose Us?</h2>
+            <h2 className="text-[var(--color-primary)] font-bold text-4xl uppercase tracking-wider relative px-6 border-l-4 border-r-4 border-[var(--color-secondary)]">Why Choose use ?</h2>
           </motion.div>
         </div>
 
@@ -608,7 +608,7 @@ export default function Home() {
             },
             {
               title: "Seamless Process",
-              desc: "Our experts track and manage each project from feasibility studies and site surveys to equipment selection, installation, and commissioning, ensuring every step meets the highest standards. Technical support for clients through site visits, inspections, technical advice & reports."
+              desc: "Our experts track and manage each project from feasibility studies and site surveys to equipment selection, installation, and commissioning, ensuring every step meets the highest standards.Technical support for clients through site visits, inspections, technical advice & reports."
             },
             {
               title: "Reliable After-Sales Support",
