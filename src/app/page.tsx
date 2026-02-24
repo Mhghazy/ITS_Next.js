@@ -248,7 +248,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none" />
 
               {/* Spinning Golden Yellow gradient tail (only visible on hover; leading and trailing edges are blurred/faded) */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_180deg,var(--color-secondary)_270deg,transparent_360deg)] z-0 pointer-events-none" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_180deg,var(--color-secondary)_270deg,transparent_360deg)] z-0 pointer-events-none" />
 
               {/* Default static border */}
               <div className="absolute inset-0 border border-gray-200 rounded-3xl group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none" />
@@ -688,7 +688,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none" />
 
               {/* Spinning Golden Yellow gradient tail (only visible on hover; leading and trailing edges are blurred/faded) */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_180deg,var(--color-secondary)_270deg,transparent_360deg)] z-0 pointer-events-none" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_180deg,var(--color-secondary)_270deg,transparent_360deg)] z-0 pointer-events-none" />
 
               {/* Default static border */}
               <div className="absolute inset-0 border border-gray-200 rounded-3xl group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none" />
