@@ -244,8 +244,11 @@ export default function Home() {
             {/* Boxed Text Content Area with Hover Animation */}
             <div className="relative p-[2px] rounded-3xl mb-10 overflow-hidden group shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
 
-              {/* Spinning gradient border (only visible on hover) */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,#0a192f_0%,#ffd700_50%,#0a192f_100%)] z-0 pointer-events-none" />
+              {/* Dark Navy Base Border Background (visible on hover) to prevent white gaps */}
+              <div className="absolute inset-0 bg-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none" />
+
+              {/* Spinning Golden Yellow gradient tail (only visible on hover) */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--color-secondary)_270deg_360deg)] z-0 pointer-events-none" />
 
               {/* Default static border */}
               <div className="absolute inset-0 border border-gray-200 rounded-3xl group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none" />
@@ -681,8 +684,11 @@ export default function Home() {
             {/* Boxed Text Content Area with Hover Animation */}
             <div className="relative p-[2px] rounded-3xl mb-0 overflow-hidden group shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
 
-              {/* Spinning gradient border (only visible on hover) */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,#0a192f_0%,#ffd700_50%,#0a192f_100%)] z-0 pointer-events-none" />
+              {/* Dark Navy Base Border Background (visible on hover) to prevent white gaps */}
+              <div className="absolute inset-0 bg-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none" />
+
+              {/* Spinning Golden Yellow gradient tail (only visible on hover) */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--color-secondary)_270deg_360deg)] z-0 pointer-events-none" />
 
               {/* Default static border */}
               <div className="absolute inset-0 border border-gray-200 rounded-3xl group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none" />
