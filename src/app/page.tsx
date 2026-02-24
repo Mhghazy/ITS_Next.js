@@ -591,7 +591,7 @@ export default function Home() {
             className="flex flex-col items-center justify-center text-center p-10 bg-[var(--color-primary)] shadow-[0_10px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] hover:-translate-y-3 transition-all duration-500 rounded-2xl w-full flex-grow border border-gray-100 min-h-[300px]"
           >
             <h2 className="text-white font-bold text-4xl leading-tight uppercase tracking-wider relative px-6 border-l-4 border-r-4 border-[var(--color-secondary)]">
-              Why Choose use ?
+              Why Choose Us
             </h2>
           </motion.div>
 
