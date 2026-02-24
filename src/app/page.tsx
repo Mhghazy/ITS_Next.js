@@ -241,30 +241,40 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* Boxed Text Content Area */}
-            <div className="border border-gray-200 p-8 rounded-3xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-[var(--color-primary)] transition-colors duration-500 mb-10">
-              {/* Super Heading */}
-              <div className="flex items-center gap-3 mb-2">
-                <span className="w-12 h-[2px] bg-[var(--color-primary)]"></span>
-                <h2 className="text-[var(--color-primary)] font-bold text-sm md:text-base uppercase tracking-[0.2em]">About Us</h2>
-              </div>
+            {/* Boxed Text Content Area with Hover Animation */}
+            <div className="relative p-[2px] rounded-3xl mb-10 overflow-hidden group shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
 
-              {/* Main Heading */}
-              <h3 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-[1.15]">
-                Let’s bring your <span className="text-[var(--color-primary)] relative whitespace-nowrap">dream pool<svg className="absolute w-full h-3 -bottom-1 left-0 text-[var(--color-secondary)]/30 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 -5 100 5" stroke="currentColor" strokeWidth="8" fill="none" /></svg></span> to life
-              </h3>
+              {/* Spinning gradient border (only visible on hover) */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,#0a192f_0%,#ffd700_50%,#0a192f_100%)] z-0 pointer-events-none" />
 
-              {/* Paragraph Description */}
-              <p className="text-gray-600 mb-8 text-lg font-light leading-[1.8]">
-                At ITS Group, we bring creativity and innovation to every project. Our extensive gallery showcases a diverse range of water features, including luxurious pools, artistic water displays, and functional leisure spaces. Whether you seek relaxation or elegance, our designs transform your vision into reality.
-              </p>
+              {/* Default static border */}
+              <div className="absolute inset-0 border border-gray-200 rounded-3xl group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none" />
 
-              {/* CTA Button */}
-              <div>
-                <Link href="/about" className="group inline-flex items-center gap-3 bg-[var(--color-primary)] text-white px-8 py-3.5 rounded-full font-bold text-base hover:bg-[var(--color-secondary)] hover:text-[var(--color-primary)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  Learn more
-                  <ArrowRightCircle className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </Link>
+              {/* Inner White Content Container */}
+              <div className="relative z-20 bg-white p-8 md:p-10 rounded-[22px] h-full w-full">
+                {/* Super Heading */}
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="w-12 h-[2px] bg-[var(--color-primary)]"></span>
+                  <h2 className="text-[var(--color-primary)] font-bold text-sm md:text-base uppercase tracking-[0.2em]">About Us</h2>
+                </div>
+
+                {/* Main Heading */}
+                <h3 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-[1.15]">
+                  Let’s bring your <span className="text-[var(--color-primary)] relative whitespace-nowrap">dream pool<svg className="absolute w-full h-3 -bottom-1 left-0 text-[var(--color-secondary)]/30 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 -5 100 5" stroke="currentColor" strokeWidth="8" fill="none" /></svg></span> to life
+                </h3>
+
+                {/* Paragraph Description */}
+                <p className="text-gray-600 mb-8 text-lg font-light leading-[1.8]">
+                  At ITS Group, we bring creativity and innovation to every project. Our extensive gallery showcases a diverse range of water features, including luxurious pools, artistic water displays, and functional leisure spaces. Whether you seek relaxation or elegance, our designs transform your vision into reality.
+                </p>
+
+                {/* CTA Button */}
+                <div>
+                  <Link href="/about" className="group/btn inline-flex items-center gap-3 bg-[var(--color-primary)] text-white px-8 py-3.5 rounded-full font-bold text-base hover:bg-[var(--color-secondary)] hover:text-[var(--color-primary)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    Learn more
+                    <ArrowRightCircle className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" />
+                  </Link>
+                </div>
               </div>
             </div>
 
