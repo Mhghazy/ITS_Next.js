@@ -200,11 +200,11 @@ export default function Home() {
 
       {/* About Us & Stats Section */}
       <section className="py-24 px-6 bg-white overflow-hidden">
-        <div className="max-w-[1140px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
+        <div className="max-w-[1140px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
           {/* Left Column: Image Accordion */}
           <motion.div
-            className="flex gap-4 h-full min-h-[400px] lg:min-h-[650px] w-full group/accordion"
+            className="flex gap-4 h-[450px] lg:h-[540px] w-full group/accordion"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
