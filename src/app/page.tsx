@@ -601,9 +601,36 @@ export default function Home() {
 
             {/* Inner Content Container */}
             <div className="relative z-20 flex flex-col items-center justify-center text-center p-10 bg-[var(--color-primary)] rounded-[14px] w-full h-full">
-              <h2 className="text-white font-bold text-4xl leading-tight uppercase tracking-wider relative px-6 border-l-4 border-r-4 border-[var(--color-secondary)]">
-                Why Choose us ?
-              </h2>
+              <div className="relative inline-flex items-center justify-center px-8 py-2 overflow-hidden">
+                {/* Left Yellow Line */}
+                <motion.div
+                  className="absolute top-0 bottom-0 w-1.5 bg-[var(--color-secondary)] z-20"
+                  initial={{ left: "50%", x: "-50%", opacity: 0 }}
+                  whileInView={{ left: 0, x: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+                />
+
+                {/* Right Yellow Line */}
+                <motion.div
+                  className="absolute top-0 bottom-0 w-1.5 bg-[var(--color-secondary)] z-20"
+                  initial={{ right: "50%", x: "50%", opacity: 0 }}
+                  whileInView={{ right: 0, x: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+                />
+
+                {/* Text Content */}
+                <motion.h2
+                  className="text-white font-bold text-4xl leading-tight uppercase tracking-wider relative z-10"
+                  initial={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                >
+                  Why Choose us ?
+                </motion.h2>
+              </div>
             </div>
           </motion.div>
 
