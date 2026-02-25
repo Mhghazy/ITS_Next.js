@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Facebook, Instagram, Youtube, Twitter, Smartphone 
 export default function Footer() {
     return (
         <footer className="bg-[#02022f] text-white pt-16 pb-8 border-t border-gray-800">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-[1140px] mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     {/* Column 1: Logo & Contact */}
                     <div className="space-y-6">
