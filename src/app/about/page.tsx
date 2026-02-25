@@ -2,9 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { getAssetUrl } from '@/utils/assetUrl';
 import { motion } from 'framer-motion';
-import { UserTie, Waves, Settings, Gem, Network, Download } from 'lucide-react';
+import { Users, Waves, Settings, Gem, Network, Download } from 'lucide-react';
 
 export default function About() {
     return (
@@ -43,7 +42,7 @@ export default function About() {
                             viewport={{ once: true }}
                         >
                             <div className="w-16 h-16 bg-[var(--color-primary)]/10 text-[var(--color-primary)] rounded-full flex items-center justify-center mb-6 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors duration-300">
-                                <UserTie className="w-8 h-8" />
+                                <Users className="w-8 h-8" />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-4">Staff</h3>
                             <p className="text-gray-600 text-sm leading-relaxed">
