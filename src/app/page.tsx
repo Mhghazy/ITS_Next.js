@@ -583,16 +583,28 @@ export default function Home() {
       <section className="py-20 px-6 bg-white overflow-hidden">
         <div className="max-w-[1140px] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
 
-          {/* Header Card */}
+          {/* Header Card with Spinning Animated Border */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center justify-center text-center p-10 bg-[var(--color-primary)] shadow-[0_10px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] hover:-translate-y-3 transition-all duration-500 rounded-2xl w-full flex-grow border border-gray-100 min-h-[300px]"
+            className="relative p-[2px] rounded-2xl w-full flex-grow group shadow-[0_10px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] hover:-translate-y-3 transition-all duration-500 min-h-[300px] overflow-hidden"
           >
-            <h2 className="text-white font-bold text-4xl leading-tight uppercase tracking-wider relative px-6 border-l-4 border-r-4 border-[var(--color-secondary)]">
-              Why Choose us ?
-            </h2>
+            {/* Dark Navy Base Border Background */}
+            <div className="absolute inset-0 bg-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none" />
+
+            {/* Spinning Golden Yellow gradient tail (only visible on hover; blurred edges) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1500px] h-[1500px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_180deg,var(--color-secondary)_270deg,transparent_360deg)] z-0 pointer-events-none" />
+
+            {/* Default static border (hidden on hover) */}
+            <div className="absolute inset-0 border border-transparent rounded-2xl group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none" />
+
+            {/* Inner Content Container */}
+            <div className="relative z-20 flex flex-col items-center justify-center text-center p-10 bg-[var(--color-primary)] rounded-[14px] w-full h-full">
+              <h2 className="text-white font-bold text-4xl leading-tight uppercase tracking-wider relative px-6 border-l-4 border-r-4 border-[var(--color-secondary)]">
+                Why Choose us ?
+              </h2>
+            </div>
           </motion.div>
 
           {/* Feature Cards */}
