@@ -12,7 +12,7 @@ export default function Footer() {
                             <img
                                 src="https://itsgroup-co.com/wp-content/uploads/2025/04/itsgroup-Logo-psd-1.png"
                                 alt="ITS Group Logo"
-                                className="w-48 h-auto object-contain bg-white/10 p-2 rounded-lg"
+                                className="w-48 h-auto object-contain"
                             />
                         </div>
                         <ul className="space-y-4">
