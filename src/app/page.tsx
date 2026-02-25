@@ -803,7 +803,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="max-w-[1140px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {[
               "https://itsgroup-co.com/wp-content/uploads/2022/06/P1300514-scaled.jpg",
               "https://itsgroup-co.com/wp-content/uploads/2022/06/P1300516-scaled.jpg",
