@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { getAssetUrl } from '@/utils/assetUrl';
 import { motion } from 'framer-motion';
 import { Users, Waves, Settings, Gem, Network, Download } from 'lucide-react';
 
@@ -14,7 +13,7 @@ export default function About() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src={getAssetUrl("/assets/hero.jpg")}
+                        src="/assets/hero.jpg"
                         alt="About Us Background"
                         fill
                         className="object-cover object-center"
