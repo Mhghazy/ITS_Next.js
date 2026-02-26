@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Users, Waves, Settings, Gem, Network, Download } from 'lucide-react';
+import { getAssetUrl } from '@/utils/paths';
 
 export default function About() {
     return (
@@ -13,7 +14,7 @@ export default function About() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/ITS_Next.js/assets/images/banisweef-1.jpg"
+                        src={getAssetUrl("/assets/images/banisweef-1.jpg")}
                         alt="About Us Background"
                         fill
                         className="object-cover object-center"
