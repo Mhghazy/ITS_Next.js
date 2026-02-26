@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { getAssetUrl } from '@/utils/assetUrl';
 import { motion } from 'framer-motion';
 import { Users, Waves, Settings, Gem, Network, Download } from 'lucide-react';
 
@@ -9,10 +10,24 @@ export default function About() {
     return (
         <main className="min-h-screen bg-white">
             {/* Header Section */}
-            <section className="py-24 bg-gray-50 border-b border-gray-100">
-                <div className="max-w-4xl mx-auto px-6 text-center">
+            <section className="relative py-32 border-b border-gray-100 flex items-center justify-center min-h-[400px]">
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src={getAssetUrl("/assets/hero.jpg")}
+                        alt="About Us Background"
+                        fill
+                        className="object-cover object-center"
+                        priority
+                    />
+                    {/* Dark Overlay for Text Readability */}
+                    <div className="absolute inset-0 bg-[#02022f]/70 mix-blend-multiply"></div>
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
                     <motion.h1
-                        className="text-5xl md:text-6xl font-extrabold text-[var(--color-primary)] mb-6"
+                        className="text-5xl md:text-6xl font-extrabold text-white mb-6"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
@@ -20,12 +35,12 @@ export default function About() {
                         About Us
                     </motion.h1>
                     <motion.p
-                        className="text-xl text-gray-600 leading-relaxed font-light"
+                        className="text-xl text-gray-200 leading-relaxed font-light"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <strong className="font-bold text-gray-900">I.T.S GROUP</strong> was established in 1996 as an energetic and highly skilled company in the field of contracting services.
+                        <strong className="font-bold text-white">I.T.S GROUP</strong> was established in 1996 as an energetic and highly skilled company in the field of contracting services.
                     </motion.p>
                 </div>
             </section>
