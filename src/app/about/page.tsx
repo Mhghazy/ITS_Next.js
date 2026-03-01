@@ -9,9 +9,14 @@ import { getAssetUrl } from '@/utils/paths';
 export default function About() {
     return (
         <main className="min-h-screen bg-white">
-            {/* Header Section */}
-            <section className="relative py-32 lg:py-40 border-b border-gray-100 flex items-center justify-center min-h-[500px]">
-                {/* Background Image */}
+            {/* Header Section (Matching Exact Elementor Structure) */}
+            <section
+                className="elementor-section elementor-top-section elementor-element elementor-element-eedf4fc elementor-section-boxed elementor-section-height-default elementor-section-height-default relative overflow-hidden"
+                data-id="eedf4fc"
+                data-element_type="section"
+                data-settings='{"background_background":"classic","_ha_eqh_enable":false}'
+            >
+                {/* Background Image handling for Next.js Base Path */}
                 <div className="absolute inset-0 z-0">
                     <Image
                         src={getAssetUrl("/assets/images/banisweef-1.jpg")}
@@ -20,28 +25,42 @@ export default function About() {
                         className="object-cover object-center"
                         priority
                     />
-                    {/* Dark Overlay for Text Readability */}
-                    <div className="absolute inset-0 bg-[#02022f]/70 mix-blend-multiply"></div>
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 text-center">
-                    <motion.h1
-                        className="text-5xl md:text-6xl font-extrabold text-white mb-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        About Us
-                    </motion.h1>
-                    <motion.p
-                        className="text-xl text-gray-200 leading-relaxed font-light"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        <strong className="font-bold text-white">I.T.S GROUP</strong> was established in 1996 as an energetic and highly skilled company in the field of contracting services.
-                    </motion.p>
+                <div className="elementor-background-overlay absolute inset-0 bg-[#02022f]/70 mix-blend-multiply z-0"></div>
+
+                <div className="elementor-container elementor-column-gap-default relative z-10 w-full">
+                    <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a2406a5" data-id="a2406a5" data-element_type="column">
+                        <div className="elementor-widget-wrap elementor-element-populated text-center">
+
+                            <div className="elementor-element elementor-element-c0c1e31 elementor-widget elementor-widget-heading" data-id="c0c1e31" data-element_type="widget" data-widget_type="heading.default">
+                                <div className="elementor-widget-container">
+                                    <motion.h1
+                                        className="elementor-heading-title elementor-size-default text-5xl md:text-6xl font-extrabold text-white mb-6"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6 }}
+                                    >
+                                        About Us
+                                    </motion.h1>
+                                </div>
+                            </div>
+
+                            <div className="elementor-element elementor-element-fdf7333 elementor-widget elementor-widget-text-editor" data-id="fdf7333" data-element_type="widget" data-widget_type="text-editor.default">
+                                <div className="elementor-widget-container">
+                                    <motion.p
+                                        className="text-xl text-gray-200 leading-relaxed font-light"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.2 }}
+                                    >
+                                        <b className="font-bold text-white">I.T.S GROUP</b> was established in 1996 as an energetic and highly skilled company in the field of contracting services.
+                                    </motion.p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </section>
 
