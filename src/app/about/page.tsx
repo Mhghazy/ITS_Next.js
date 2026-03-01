@@ -9,9 +9,9 @@ import { getAssetUrl } from '@/utils/paths';
 export default function About() {
     return (
         <main className="min-h-screen bg-white">
-            {/* Header Section (Matching Exact Elementor Structure) */}
+            {/* Header Section (Matching Exact Elementor Structure and Next.js Styling) */}
             <section
-                className="elementor-section elementor-top-section elementor-element elementor-element-eedf4fc elementor-section-boxed elementor-section-height-default elementor-section-height-default relative overflow-hidden"
+                className="elementor-section elementor-top-section elementor-element elementor-element-eedf4fc elementor-section-boxed elementor-section-height-default elementor-section-height-default relative overflow-hidden flex items-center justify-center py-32 lg:py-40 min-h-[500px]"
                 data-id="eedf4fc"
                 data-element_type="section"
                 data-settings='{"background_background":"classic","_ha_eqh_enable":false}'
@@ -29,7 +29,7 @@ export default function About() {
 
                 <div className="elementor-background-overlay absolute inset-0 bg-[#02022f]/70 mix-blend-multiply z-0"></div>
 
-                <div className="elementor-container elementor-column-gap-default relative z-10 w-full">
+                <div className="elementor-container elementor-column-gap-default relative z-10 w-full max-w-[1600px] mx-auto px-4">
                     <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a2406a5" data-id="a2406a5" data-element_type="column">
                         <div className="elementor-widget-wrap elementor-element-populated text-center">
 
