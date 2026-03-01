@@ -10,7 +10,7 @@ export default function About() {
     return (
         <main className="min-h-screen bg-white">
             {/* Header Section */}
-            <section className="relative py-16 lg:py-24 border-b border-gray-100 flex items-center justify-center">
+            <section className="relative py-32 lg:py-40 border-b border-gray-100 flex items-center justify-center min-h-[500px]">
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <Image
@@ -25,7 +25,7 @@ export default function About() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 w-full max-w-[1140px] mx-auto px-4 text-center">
+                <div className="relative z-10 w-full max-w-[1240px] mx-auto px-4 text-center">
                     <motion.h1
                         className="text-5xl md:text-6xl font-extrabold text-white mb-6"
                         initial={{ opacity: 0, y: 20 }}
