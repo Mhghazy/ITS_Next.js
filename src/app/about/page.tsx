@@ -11,7 +11,7 @@ export default function About() {
         <main className="min-h-screen bg-white">
             {/* Header Section (Matching Exact Elementor Structure and Next.js Styling) */}
             <section
-                className="elementor-section elementor-top-section elementor-element elementor-element-eedf4fc elementor-section-boxed elementor-section-height-default elementor-section-height-default relative overflow-hidden flex items-center justify-center py-32 lg:py-40 min-h-[500px]"
+                className="elementor-section elementor-top-section elementor-element elementor-element-eedf4fc elementor-section-boxed elementor-section-height-default elementor-section-height-default relative overflow-hidden flex items-center justify-center py-40 lg:py-48 min-h-[70vh] lg:min-h-[750px]"
                 data-id="eedf4fc"
                 data-element_type="section"
                 data-settings='{"background_background":"classic","_ha_eqh_enable":false}'
