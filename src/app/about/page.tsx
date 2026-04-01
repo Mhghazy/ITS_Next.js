@@ -1,9 +1,35 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { getAssetUrl } from '@/utils/paths';
 import { Users, Waves, Settings, Gem, Network, CheckCircle2, Star, Download } from 'lucide-react';
+
+// ── Gate-reveal heading ───────────────────────────────────────────────────────
+// Wraps the heading in overflow:hidden (the "gate") so the text slides in from
+// fully off-screen — left in LTR (English), right in RTL (Arabic).
+function GateHeading({ text }: { text: string }) {
+    const [slideX, setSlideX] = useState('-110%');
+
+    useEffect(() => {
+        const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+        setSlideX(isRtl ? '110%' : '-110%');
+    }, []);
+
+    return (
+        <div style={{ overflow: 'hidden', display: 'inline-block' }}>
+            <motion.h1
+                className="elementor-heading-title elementor-size-default text-5xl md:text-6xl font-extrabold text-white mb-6"
+                initial={{ x: slideX }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
+                {text}
+            </motion.h1>
+        </div>
+    );
+}
 
 export default function About() {
     return (
@@ -38,14 +64,7 @@ export default function About() {
 
                             <div className="elementor-element elementor-element-c0c1e31 elementor-widget elementor-widget-heading" data-id="c0c1e31" data-element_type="widget" data-widget_type="heading.default">
                                 <div className="elementor-widget-container">
-                                    <motion.h1
-                                        className="elementor-heading-title elementor-size-default text-5xl md:text-6xl font-extrabold text-white mb-6"
-                                        initial={{ opacity: 0, y: 30 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.8, ease: "easeOut" }}
-                                    >
-                                        About Us
-                                    </motion.h1>
+                                    <GateHeading text="About Us" />
                                 </div>
                             </div>
 

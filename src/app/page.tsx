@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Droplets, Building2, Wrench, CheckCircle2, ArrowRightCircle, Phone, Award, Check } from "lucide-react";
+import { Droplets, Building2, Wrench, CheckCircle2, ArrowRightCircle, Phone, Award, Check, Users, Palette, Activity, Headphones } from "lucide-react";
 import { getAssetUrl } from '@/utils/paths';
 
 // Animation variants
@@ -25,34 +25,35 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col pt-[48px] lg:pt-[96px]">
       {/* Hero Section */}
-      <section className="relative h-[calc(100vh-100px)] flex items-start justify-center pt-20 bg-[var(--color-primary)] text-white overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image src={getAssetUrl("/assets/hero.jpg")} alt="Luxury Swimming Pool" fill className="object-cover opacity-100 object-bottom" priority />
-
-        </div>
-        <motion.div
-          className="relative z-10 text-center px-4 max-w-5xl mx-auto"
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-        >
-          <motion.h2
-            className="text-white font-bold text-xl md:text-3xl lg:text-4xl mb-4 tracking-wider drop-shadow-lg capitalize"
-            variants={fadeInUp}
-          >
-            Integrated Technical Service Group
-          </motion.h2>
+      <section className="relative flex items-center justify-center bg-black text-white overflow-hidden">
+        {/* Natural-size image — full width, auto height, no black bars */}
+        <img
+          src={getAssetUrl("/assets/hero.jpg")}
+          alt="Luxury Swimming Pool"
+          className="w-full h-auto block"
+        />
+        {/* Text overlay */}
+        <div className="absolute inset-0 flex flex-col items-center justify-start pt-12 md:pt-24">
           <motion.div
-            variants={fadeInUp}
-            className="mt-8"
+            className="relative z-10 text-center px-4 max-w-5xl mx-auto"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
           >
-            <Link href="/about" className="group inline-flex items-center gap-2 text-white font-bold text-lg hover:text-[var(--color-secondary)] transition-all">
-              <ArrowRightCircle className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              Learn more
-            </Link>
+            <motion.h2
+              className="text-white font-bold text-xl md:text-3xl lg:text-4xl mb-4 tracking-wider drop-shadow-lg capitalize"
+              variants={fadeInUp}
+            >
+              Integrated Technical Service Group
+            </motion.h2>
+            <motion.div variants={fadeInUp} className="mt-8">
+              <Link href="/about" className="group inline-flex items-center gap-2 text-white font-bold text-lg hover:text-[var(--color-secondary)] transition-all">
+                <ArrowRightCircle className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                Learn more
+              </Link>
+            </motion.div>
           </motion.div>
-
-        </motion.div>
+        </div>
       </section>
       {/* Intro Section - Budget & Value & Contact */}
       <section className="py-16 px-6 bg-white">
@@ -213,7 +214,7 @@ export default function Home() {
             {/* Accordion Item 1 */}
             <div className="relative rounded-2xl overflow-hidden h-full w-1/2 group-hover/accordion:w-[30%] hover:!w-[70%] transition-all duration-700 ease-in-out cursor-pointer group/item">
               <Image
-                src={getAssetUrl("/assets/hero.jpg")}
+                src={getAssetUrl("/assets/images/home-accordion-1.jpeg")}
                 alt="Luxury Pool"
                 fill
                 className="object-cover"
@@ -224,8 +225,8 @@ export default function Home() {
             {/* Accordion Item 2 */}
             <div className="relative rounded-2xl overflow-hidden h-full w-1/2 group-hover/accordion:w-[30%] hover:!w-[70%] transition-all duration-700 ease-in-out cursor-pointer group/item">
               <Image
-                src={getAssetUrl("/assets/images/1-768x576.jpg")}
-                alt="Residential Pool"
+                src={getAssetUrl("/assets/images/home-accordion-2.jpeg")}
+                alt="Dream Pool Concept"
                 fill
                 className="object-cover"
               />
@@ -388,76 +389,76 @@ export default function Home() {
         <div className="relative w-full overflow-hidden mask-gradient-x">
           <div className="flex gap-12 animate-marquee whitespace-nowrap">
             {[
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-هايتس-العميل-e1654778620715.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/شركة-سوديك.jpeg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/palm-hills-e1654774863824.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-e1655239900843.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-إيطاليا-للأستثمار-والتطوير-العقاري-e1654774974587.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-LAKE-VIEW-e1654779166323.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-البطل-جروب-e1655239934993.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-الجازى-e1654776962975.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/download-e1654778126780.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/مجدى-للمقاولات-شركة.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-توليب-التجمع-الخامس-e1654777440193.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-الهيئة-الهندسية-للقوات-المسلحة-e1654777517635.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-النوبى-e1654777567844.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-المهندسون-المتحدون-العميل-e1654777670456.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-الصفوة-جروب-e1654777779760.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-الفنار-e1654777885730.jpeg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-e1654778334267.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/المقاولون-العرب-1.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/العميل-طلعت-مصطفى-جروب.jpeg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-MOUNTAIN-VIEW-e1654779040871.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/العميل-سيرفو-ميد.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-لأستثمارات-العميل-العقارية-e1654779274581.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-القطرية-e1655239952785.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-للتطوير-العقاري-e1654779527284.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/orascom.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/new-giza.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Mobinil-e1654781006876.jpeg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/hassan-allam-e1654781363159.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Ginza-for-Constructions-Realistic-Development-e1654781435326.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Egyptian-office-e1654781511364.jpg",
+              "/assets/images/partners_original/-هايتس-العميل-e1654778620715.png",
+              "/assets/images/partners_original/شركة-سوديك.jpeg",
+              "/assets/images/partners_original/palm-hills-e1654774863824.jpg",
+              "/assets/images/partners_original/-e1655239900843.jpg",
+              "/assets/images/partners_original/-إيطاليا-للأستثمار-والتطوير-العقاري-e1654774974587.jpg",
+              "/assets/images/partners_original/-LAKE-VIEW-e1654779166323.png",
+              "/assets/images/partners_original/-البطل-جروب-e1655239934993.png",
+              "/assets/images/partners_original/-الجازى-e1654776962975.jpg",
+              "/assets/images/partners_original/download-e1654778126780.png",
+              "/assets/images/partners_original/مجدى-للمقاولات-شركة.jpg",
+              "/assets/images/partners_original/-توليب-التجمع-الخامس-e1654777440193.jpg",
+              "/assets/images/partners_original/-الهيئة-الهندسية-للقوات-المسلحة-e1654777517635.jpg",
+              "/assets/images/partners_original/-النوبى-e1654777567844.png",
+              "/assets/images/partners_original/-المهندسون-المتحدون-العميل-e1654777670456.jpg",
+              "/assets/images/partners_original/-الصفوة-جروب-e1654777779760.png",
+              "/assets/images/partners_original/-الفنار-e1654777885730.jpeg",
+              "/assets/images/partners_original/-e1654778334267.jpg",
+              "/assets/images/partners_original/المقاولون-العرب-1.jpg",
+              "/assets/images/partners_original/العميل-طلعت-مصطفى-جروب.jpeg",
+              "/assets/images/partners_original/-MOUNTAIN-VIEW-e1654779040871.jpg",
+              "/assets/images/partners_original/العميل-سيرفو-ميد.png",
+              "/assets/images/partners_original/-لأستثمارات-العميل-العقارية-e1654779274581.png",
+              "/assets/images/partners_original/-القطرية-e1655239952785.jpg",
+              "/assets/images/partners_original/-للتطوير-العقاري-e1654779527284.jpg",
+              "/assets/images/partners_original/orascom.jpg",
+              "/assets/images/partners_original/new-giza.jpg",
+              "/assets/images/partners_original/Mobinil-e1654781006876.jpeg",
+              "/assets/images/partners_original/hassan-allam-e1654781363159.jpg",
+              "/assets/images/partners_original/Ginza-for-Constructions-Realistic-Development-e1654781435326.png",
+              "/assets/images/partners_original/Egyptian-office-e1654781511364.jpg",
             ].map((logo, index) => (
               <div key={`logo-${index}`} className="relative w-32 h-20 flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                <img src={logo} alt="Partner Logo" className="object-contain w-full h-full" />
+                <img src={getAssetUrl(logo)} alt="Partner Logo" className="object-contain w-full h-full" />
               </div>
             ))}
             {/* Duplicate for infinite loop */}
             {[
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-هايتس-العميل-e1654778620715.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/شركة-سوديك.jpeg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/palm-hills-e1654774863824.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-e1655239900843.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-إيطاليا-للأستثمار-والتطوير-العقاري-e1654774974587.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-LAKE-VIEW-e1654779166323.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-البطل-جروب-e1655239934993.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-الجازى-e1654776962975.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/download-e1654778126780.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/مجدى-للمقاولات-شركة.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-توليب-التجمع-الخامس-e1654777440193.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-الهيئة-الهندسية-للقوات-المسلحة-e1654777517635.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-النوبى-e1654777567844.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-المهندسون-المتحدون-العميل-e1654777670456.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-الصفوة-جروب-e1654777779760.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-الفنار-e1654777885730.jpeg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-e1654778334267.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/المقاولون-العرب-1.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/العميل-طلعت-مصطفى-جروب.jpeg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-MOUNTAIN-VIEW-e1654779040871.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/العميل-سيرفو-ميد.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-لأستثمارات-العميل-العقارية-e1654779274581.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-القطرية-e1655239952785.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-للتطوير-العقاري-e1654779527284.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/orascom.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/new-giza.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Mobinil-e1654781006876.jpeg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/hassan-allam-e1654781363159.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Ginza-for-Constructions-Realistic-Development-e1654781435326.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Egyptian-office-e1654781511364.jpg",
+              "/assets/images/partners_original/-هايتس-العميل-e1654778620715.png",
+              "/assets/images/partners_original/شركة-سوديك.jpeg",
+              "/assets/images/partners_original/palm-hills-e1654774863824.jpg",
+              "/assets/images/partners_original/-e1655239900843.jpg",
+              "/assets/images/partners_original/-إيطاليا-للأستثمار-والتطوير-العقاري-e1654774974587.jpg",
+              "/assets/images/partners_original/-LAKE-VIEW-e1654779166323.png",
+              "/assets/images/partners_original/-البطل-جروب-e1655239934993.png",
+              "/assets/images/partners_original/-الجازى-e1654776962975.jpg",
+              "/assets/images/partners_original/download-e1654778126780.png",
+              "/assets/images/partners_original/مجدى-للمقاولات-شركة.jpg",
+              "/assets/images/partners_original/-توليب-التجمع-الخامس-e1654777440193.jpg",
+              "/assets/images/partners_original/-الهيئة-الهندسية-للقوات-المسلحة-e1654777517635.jpg",
+              "/assets/images/partners_original/-النوبى-e1654777567844.png",
+              "/assets/images/partners_original/-المهندسون-المتحدون-العميل-e1654777670456.jpg",
+              "/assets/images/partners_original/-الصفوة-جروب-e1654777779760.png",
+              "/assets/images/partners_original/-الفنار-e1654777885730.jpeg",
+              "/assets/images/partners_original/-e1654778334267.jpg",
+              "/assets/images/partners_original/المقاولون-العرب-1.jpg",
+              "/assets/images/partners_original/العميل-طلعت-مصطفى-جروب.jpeg",
+              "/assets/images/partners_original/-MOUNTAIN-VIEW-e1654779040871.jpg",
+              "/assets/images/partners_original/العميل-سيرفو-ميد.png",
+              "/assets/images/partners_original/-لأستثمارات-العميل-العقارية-e1654779274581.png",
+              "/assets/images/partners_original/-القطرية-e1655239952785.jpg",
+              "/assets/images/partners_original/-للتطوير-العقاري-e1654779527284.jpg",
+              "/assets/images/partners_original/orascom.jpg",
+              "/assets/images/partners_original/new-giza.jpg",
+              "/assets/images/partners_original/Mobinil-e1654781006876.jpeg",
+              "/assets/images/partners_original/hassan-allam-e1654781363159.jpg",
+              "/assets/images/partners_original/Ginza-for-Constructions-Realistic-Development-e1654781435326.png",
+              "/assets/images/partners_original/Egyptian-office-e1654781511364.jpg",
             ].map((logo, index) => (
               <div key={`logo-dup-${index}`} className="relative w-32 h-20 flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                <img src={logo} alt="Partner Logo" className="object-contain w-full h-full" />
+                <img src={getAssetUrl(logo)} alt="Partner Logo" className="object-contain w-full h-full" />
               </div>
             ))}
           </div>
@@ -483,96 +484,96 @@ export default function Home() {
         <div className="relative w-full overflow-hidden mask-gradient-x">
           <div className="flex gap-12 animate-marquee whitespace-nowrap">
             {[
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/HIdroten.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/etatron.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/bio-uv.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/bin-talib-e1654951048153.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/pentair.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/pina-e1654951160303.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/saci.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/مكتب-الاستشارى-الهندسى-دكتور-أحمد-عجور.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/شركة-المكتب-المصرى.jpeg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-MITO-e1654951344794.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/استشارى-معمارى-الجازى.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-معمارى-البروج-e1654951454959.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-المشروع-PMI-PROGECT-MANAGEMENT-INSTITUTE-e1654951500644.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-ProMEP-e1654951560516.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-AZURE-e1654951603922.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/sites-bouroj-consultant-e1654951648625.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/PACER-CONSULTANT-cv-e1654951706683.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/oko-plan-ستشارى-الجازى.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Home-Logo-cv-e1654951857145.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/designer-شروع-شرم-الشيخ-الديار-القطرية-e1654951904353.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/CURVE-LAND-SCAPE-استشارى-المشروع.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Shehab-Mazhar-Office.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Shaker-e1654952042345.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Sama-Consult-e1654952102370.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Saleh-Hegab-Office-e1654952191912.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/SABBOUr-e1654952245164.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Moharam-Bakhom-Office-e1654952309985.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Misr-Consult-e1654952380766.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Electromechanical-Design-Engineering-Group-e1654952424734.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/EHAF-e1654952469152.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/ECG-e1654952523861.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/ECDG-e1654952571193.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Dar-Al-Handasah-e1654952629496.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-أبناء-سعد-حنا-e1656278001165.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-يم-للهندسة-المقاول-والديكور-e1654951160303.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-مصر-اسمنت-e1656278202575.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/alamia-for-const-e1656278312583.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/yarco-المقاول-e1656278404368.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-الشركة-العامة-رولان-e1656278464291.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/arab-swiss-engineering-استشارى-العملية-e1656278572564.gif",
+              "/assets/images/partners_original/HIdroten.jpg",
+              "/assets/images/partners_original/etatron.jpg",
+              "/assets/images/partners_original/bio-uv.jpg",
+              "/assets/images/partners_original/bin-talib-e1654951048153.jpg",
+              "/assets/images/partners_original/pentair.jpg",
+              "/assets/images/partners_original/pina-e1654951160303.jpg",
+              "/assets/images/partners_original/saci.jpg",
+              "/assets/images/partners_original/مكتب-الاستشارى-الهندسى-دكتور-أحمد-عجور.png",
+              "/assets/images/partners_original/شركة-المكتب-المصرى.jpeg",
+              "/assets/images/partners_original/-MITO-e1654951344794.jpg",
+              "/assets/images/partners_original/استشارى-معمارى-الجازى.jpg",
+              "/assets/images/partners_original/-معمارى-البروج-e1654951454959.jpg",
+              "/assets/images/partners_original/-المشروع-PMI-PROGECT-MANAGEMENT-INSTITUTE-e1654951500644.jpg",
+              "/assets/images/partners_original/-ProMEP-e1654951560516.jpg",
+              "/assets/images/partners_original/-AZURE-e1654951603922.png",
+              "/assets/images/partners_original/sites-bouroj-consultant-e1654951648625.png",
+              "/assets/images/partners_original/PACER-CONSULTANT-cv-e1654951706683.jpg",
+              "/assets/images/partners_original/oko-plan-ستشارى-الجازى.png",
+              "/assets/images/partners_original/Home-Logo-cv-e1654951857145.png",
+              "/assets/images/partners_original/designer-شروع-شرم-الشيخ-الديار-القطرية-e1654951904353.png",
+              "/assets/images/partners_original/CURVE-LAND-SCAPE-استشارى-المشروع.png",
+              "/assets/images/partners_original/Shehab-Mazhar-Office.png",
+              "/assets/images/partners_original/Shaker-e1654952042345.png",
+              "/assets/images/partners_original/Sama-Consult-e1654952102370.png",
+              "/assets/images/partners_original/Saleh-Hegab-Office-e1654952191912.jpg",
+              "/assets/images/partners_original/SABBOUr-e1654952245164.jpg",
+              "/assets/images/partners_original/Moharam-Bakhom-Office-e1654952309985.png",
+              "/assets/images/partners_original/Misr-Consult-e1654952380766.jpg",
+              "/assets/images/partners_original/Electromechanical-Design-Engineering-Group-e1654952424734.png",
+              "/assets/images/partners_original/EHAF-e1654952469152.png",
+              "/assets/images/partners_original/ECG-e1654952523861.jpg",
+              "/assets/images/partners_original/ECDG-e1654952571193.png",
+              "/assets/images/partners_original/Dar-Al-Handasah-e1654952629496.jpg",
+              "/assets/images/partners_original/-أبناء-سعد-حنا-e1656278001165.png",
+              "/assets/images/partners_original/-يم-للهندسة-المقاول-والديكور-e1654951160303.jpg",
+              "/assets/images/partners_original/-مصر-اسمنت-e1656278202575.png",
+              "/assets/images/partners_original/alamia-for-const-e1656278312583.jpg",
+              "/assets/images/partners_original/yarco-المقاول-e1656278404368.jpg",
+              "/assets/images/partners_original/-الشركة-العامة-رولان-e1656278464291.jpg",
+              "/assets/images/partners_original/arab-swiss-engineering-استشارى-العملية-e1656278572564.gif",
             ].map((logo, index) => (
               <div key={`logo-p2-${index}`} className="relative w-32 h-20 flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                <img src={logo} alt="Partner In Success Logo" className="object-contain w-full h-full" />
+                <img src={getAssetUrl(logo)} alt="Partner In Success Logo" className="object-contain w-full h-full" />
               </div>
             ))}
             {/* Duplicate for infinite loop */}
             {[
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/HIdroten.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/etatron.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/bio-uv.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/bin-talib-e1654951048153.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/pentair.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/pina-e1654951160303.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/saci.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/مكتب-الاستشارى-الهندسى-دكتور-أحمد-عجور.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/شركة-المكتب-المصرى.jpeg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-MITO-e1654951344794.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/استشارى-معمارى-الجازى.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-معمارى-البروج-e1654951454959.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-المشروع-PMI-PROGECT-MANAGEMENT-INSTITUTE-e1654951500644.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-ProMEP-e1654951560516.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-AZURE-e1654951603922.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/sites-bouroj-consultant-e1654951648625.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/PACER-CONSULTANT-cv-e1654951706683.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/oko-plan-ستشارى-الجازى.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Home-Logo-cv-e1654951857145.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/designer-شروع-شرم-الشيخ-الديار-القطرية-e1654951904353.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/CURVE-LAND-SCAPE-استشارى-المشروع.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Shehab-Mazhar-Office.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Shaker-e1654952042345.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Sama-Consult-e1654952102370.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Saleh-Hegab-Office-e1654952191912.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/SABBOUr-e1654952245164.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Moharam-Bakhom-Office-e1654952309985.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Misr-Consult-e1654952380766.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Electromechanical-Design-Engineering-Group-e1654952424734.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/EHAF-e1654952469152.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/ECG-e1654952523861.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/ECDG-e1654952571193.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/Dar-Al-Handasah-e1654952629496.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-أبناء-سعد-حنا-e1656278001165.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-يم-للهندسة-المقاول-والديكور-e1654951160303.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-مصر-اسمنت-e1656278202575.png",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/alamia-for-const-e1656278312583.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/yarco-المقاول-e1656278404368.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/-الشركة-العامة-رولان-e1656278464291.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/arab-swiss-engineering-استشارى-العملية-e1656278572564.gif",
+              "/assets/images/partners_original/HIdroten.jpg",
+              "/assets/images/partners_original/etatron.jpg",
+              "/assets/images/partners_original/bio-uv.jpg",
+              "/assets/images/partners_original/bin-talib-e1654951048153.jpg",
+              "/assets/images/partners_original/pentair.jpg",
+              "/assets/images/partners_original/pina-e1654951160303.jpg",
+              "/assets/images/partners_original/saci.jpg",
+              "/assets/images/partners_original/مكتب-الاستشارى-الهندسى-دكتور-أحمد-عجور.png",
+              "/assets/images/partners_original/شركة-المكتب-المصرى.jpeg",
+              "/assets/images/partners_original/-MITO-e1654951344794.jpg",
+              "/assets/images/partners_original/استشارى-معمارى-الجازى.jpg",
+              "/assets/images/partners_original/-معمارى-البروج-e1654951454959.jpg",
+              "/assets/images/partners_original/-المشروع-PMI-PROGECT-MANAGEMENT-INSTITUTE-e1654951500644.jpg",
+              "/assets/images/partners_original/-ProMEP-e1654951560516.jpg",
+              "/assets/images/partners_original/-AZURE-e1654951603922.png",
+              "/assets/images/partners_original/sites-bouroj-consultant-e1654951648625.png",
+              "/assets/images/partners_original/PACER-CONSULTANT-cv-e1654951706683.jpg",
+              "/assets/images/partners_original/oko-plan-ستشارى-الجازى.png",
+              "/assets/images/partners_original/Home-Logo-cv-e1654951857145.png",
+              "/assets/images/partners_original/designer-شروع-شرم-الشيخ-الديار-القطرية-e1654951904353.png",
+              "/assets/images/partners_original/CURVE-LAND-SCAPE-استشارى-المشروع.png",
+              "/assets/images/partners_original/Shehab-Mazhar-Office.png",
+              "/assets/images/partners_original/Shaker-e1654952042345.png",
+              "/assets/images/partners_original/Sama-Consult-e1654952102370.png",
+              "/assets/images/partners_original/Saleh-Hegab-Office-e1654952191912.jpg",
+              "/assets/images/partners_original/SABBOUr-e1654952245164.jpg",
+              "/assets/images/partners_original/Moharam-Bakhom-Office-e1654952309985.png",
+              "/assets/images/partners_original/Misr-Consult-e1654952380766.jpg",
+              "/assets/images/partners_original/Electromechanical-Design-Engineering-Group-e1654952424734.png",
+              "/assets/images/partners_original/EHAF-e1654952469152.png",
+              "/assets/images/partners_original/ECG-e1654952523861.jpg",
+              "/assets/images/partners_original/ECDG-e1654952571193.png",
+              "/assets/images/partners_original/Dar-Al-Handasah-e1654952629496.jpg",
+              "/assets/images/partners_original/-أبناء-سعد-حنا-e1656278001165.png",
+              "/assets/images/partners_original/-يم-للهندسة-المقاول-والديكور-e1654951160303.jpg",
+              "/assets/images/partners_original/-مصر-اسمنت-e1656278202575.png",
+              "/assets/images/partners_original/alamia-for-const-e1656278312583.jpg",
+              "/assets/images/partners_original/yarco-المقاول-e1656278404368.jpg",
+              "/assets/images/partners_original/-الشركة-العامة-رولان-e1656278464291.jpg",
+              "/assets/images/partners_original/arab-swiss-engineering-استشارى-العملية-e1656278572564.gif",
             ].map((logo, index) => (
               <div key={`logo-dup-p2-${index}`} className="relative w-32 h-20 flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                <img src={logo} alt="Partner In Success Logo" className="object-contain w-full h-full" />
+                <img src={getAssetUrl(logo)} alt="Partner In Success Logo" className="object-contain w-full h-full" />
               </div>
             ))}
           </div>
@@ -638,23 +639,28 @@ export default function Home() {
           {[
             {
               title: "Expert Project Management",
-              desc: "Each project is assigned a dedicated project manager and supervisor to ensure a smooth construction process and deliver top-quality results. Our specialized permit team works to expedite city permit applications, minimizing any potential delays."
+              desc: "Each project is assigned a dedicated project manager and supervisor to ensure a smooth construction process and deliver top-quality results. Our specialized permit team works to expedite city permit applications, minimizing any potential delays.",
+              icon: <Users className="w-8 h-8 text-[var(--color-primary)]" />
             },
             {
               title: "Custom Designs",
-              desc: "At ITS Group, we bring your vision to life! Our professionals create tailor-made designs that cater to your specific needs, ensuring a unique and personalized experience."
+              desc: "At ITS Group, we bring your vision to life! Our professionals create tailor-made designs that cater to your specific needs, ensuring a unique and personalized experience.",
+              icon: <Palette className="w-8 h-8 text-[var(--color-primary)]" />
             },
             {
               title: "Comprehensive Services",
-              desc: "From initial concept and design to construction, installation, and maintenance, we provide end-to-end solutions to bring your dream pool to reality."
+              desc: "From initial concept and design to construction, installation, and maintenance, we provide end-to-end solutions to bring your dream pool to reality.",
+              icon: <Wrench className="w-8 h-8 text-[var(--color-primary)]" />
             },
             {
               title: "Seamless Process",
-              desc: "Our experts track and manage each project from feasibility studies and site surveys to equipment selection, installation, and commissioning, ensuring every step meets the highest standards.Technical support for clients through site visits, inspections, technical advice & reports."
+              desc: "Our experts track and manage each project from feasibility studies and site surveys to equipment selection, installation, and commissioning, ensuring every step meets the highest standards.Technical support for clients through site visits, inspections, technical advice & reports.",
+              icon: <Activity className="w-8 h-8 text-[var(--color-primary)]" />
             },
             {
               title: "Reliable After-Sales Support",
-              desc: "We offer ongoing support, including operation & maintenance contracts, equipment supply, spare parts, and technical assistance through site visits, inspections, and expert advice."
+              desc: "We offer ongoing support, including operation & maintenance contracts, equipment supply, spare parts, and technical assistance through site visits, inspections, and expert advice.",
+              icon: <Headphones className="w-8 h-8 text-[var(--color-primary)]" />
             }
           ].map((item, index) => (
             <motion.div
@@ -666,12 +672,8 @@ export default function Home() {
               className="flex flex-col items-center text-center p-10 bg-white shadow-[0_10px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] hover:-translate-y-3 transition-all duration-500 rounded-2xl w-full flex-grow border border-gray-100"
             >
               <div className="mb-6 flex justify-center">
-                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-[var(--color-primary)]/5 p-3">
-                  <img
-                    src="https://itsgroup-co.com/wp-content/uploads/2025/08/orange-check-mark-circular-tick-16216.png"
-                    alt="Check"
-                    className="w-full h-full object-contain"
-                  />
+                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-[var(--color-primary)]/5 p-3 flex-shrink-0">
+                  {item.icon}
                 </div>
               </div>
               <h3 className="text-xl font-bold text-[var(--color-primary)] mb-4">{item.title}</h3>
@@ -697,19 +699,21 @@ export default function Home() {
           >
             {/* Accordion Item 1 */}
             <div className="relative rounded-2xl overflow-hidden h-full w-1/2 group-hover/accordion:w-[30%] hover:!w-[70%] transition-all duration-700 ease-in-out cursor-pointer group/item">
-              <img
-                src="https://itsgroup-co.com/wp-content/uploads/2025/04/5kWRpgsp-1025x1536-1.jpeg"
-                alt="Value Image 1"
-                className="absolute inset-0 w-full h-full object-cover"
+              <Image
+                src={getAssetUrl("/assets/images/values-pool-craftsmanship.png")}
+                alt="Quality Craftsmanship & Excellence"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-black/20 group-hover/item:bg-transparent transition-colors duration-500"></div>
             </div>
             {/* Accordion Item 2 */}
             <div className="relative rounded-2xl overflow-hidden h-full w-1/2 group-hover/accordion:w-[30%] hover:!w-[70%] transition-all duration-700 ease-in-out cursor-pointer group/item">
-              <img
-                src="https://itsgroup-co.com/wp-content/uploads/2025/04/IMG_0322-1-1536x1024-1.jpg"
-                alt="Value Image 2"
-                className="absolute inset-0 w-full h-full object-cover"
+              <Image
+                src={getAssetUrl("/assets/images/values-pool-luxury.png")}
+                alt="Luxury Resort Dream Pool"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-black/20 group-hover/item:bg-transparent transition-colors duration-500"></div>
             </div>
@@ -805,18 +809,18 @@ export default function Home() {
 
           <div className="max-w-[1140px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {[
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/P1300514-scaled.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/P1300516-scaled.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/P5190031-copy-scaled.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/P1170922-scaled.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/IMG_0117-scaled.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/DSCN2463-scaled.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/DSCN0059-scaled.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/P2210674-scaled.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/P80800111.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/P1300529-scaled.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/leasure-1-scaled.jpg",
-              "https://itsgroup-co.com/wp-content/uploads/2022/06/P1300519-scaled.jpg"
+              "/assets/images/gallery/P1300514-scaled.jpg",
+              "/assets/images/gallery/P1300516-scaled.jpg",
+              "/assets/images/gallery/P5190031-copy-scaled.jpg",
+              "/assets/images/gallery/P1170922-scaled.jpg",
+              "/assets/images/gallery/IMG_0117-scaled.jpg",
+              "/assets/images/gallery/DSCN2463-scaled.jpg",
+              "/assets/images/gallery/DSCN0059-scaled.jpg",
+              "/assets/images/gallery/P2210674-scaled.jpg",
+              "/assets/images/gallery/P80800111.jpg",
+              "/assets/images/gallery/P1300529-scaled.jpg",
+              "/assets/images/gallery/leasure-1-scaled.jpg",
+              "/assets/images/gallery/P1300519-scaled.jpg"
             ].map((src, index) => (
               <motion.div
                 key={index}
@@ -827,7 +831,7 @@ export default function Home() {
                 transition={{ delay: index * 0.05 }}
               >
                 <img
-                  src={src}
+                  src={getAssetUrl(src)}
                   alt={`Gallery Image ${index + 1}`}
                   className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                 />

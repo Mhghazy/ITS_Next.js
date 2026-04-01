@@ -2,7 +2,105 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { getAssetUrl } from '@/utils/paths';
+
+// ── Typewriter paragraph ────────────────────────────────────────────────────
+// Splits the text into word tokens (preserving bold spans) and reveals them
+// one by one with a stagger, simulating the feel of text being written.
+// Direction is detected at runtime from <html dir="..."> so it works for
+// both English (LTR → words appear left→right) and Arabic (RTL → right→left).
+
+type Token = { text: string; bold: boolean };
+
+const TOKENS: Token[] = [
+    { text: 'I.T.S Group', bold: true },
+    { text: ' offers a great variety of services, these services are not limited only to ', bold: false },
+    { text: 'Residential Sector', bold: true },
+    { text: ' which includes villas owners & compounds or ', bold: false },
+    { text: 'Commercial Sector', bold: true },
+    { text: ' which includes real estate developers, touristic projects, social & sporting clubs, contracting companies & governmental sectors, but many more.', bold: false },
+];
+
+function TypewriterParagraph() {
+    const [isRtl, setIsRtl] = useState(false);
+
+    useEffect(() => {
+        setIsRtl(document.documentElement.getAttribute('dir') === 'rtl');
+    }, []);
+
+    // For RTL we reverse the token order so words appear right→left
+    const tokens = isRtl ? [...TOKENS].reverse() : TOKENS;
+
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                delayChildren: 0.4,
+                staggerChildren: 0.06,
+            },
+        },
+    };
+
+    const wordVariants = {
+        hidden: { opacity: 0, y: 6 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.18, ease: 'easeOut' as const },
+        },
+    };
+
+    return (
+        <motion.p
+            className="text-xl text-white leading-relaxed drop-shadow-md"
+            style={{ direction: isRtl ? 'rtl' : 'ltr' }}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+        >
+            {tokens.map((token, i) =>
+                token.text.split(' ').map((word, j) =>
+                    word ? (
+                        <motion.span
+                            key={`${i}-${j}`}
+                            variants={wordVariants}
+                            style={{ display: 'inline-block', marginRight: '0.25em' }}
+                        >
+                            {token.bold ? <strong className="font-bold text-white">{word}</strong> : word}
+                        </motion.span>
+                    ) : null
+                )
+            )}
+        </motion.p>
+    );
+}
+
+// ── Gate-reveal heading ──────────────────────────────────────────────────────
+// The wrapper clips the heading with overflow:hidden (the "gate").
+// The heading slides in from fully outside: left in LTR, right in RTL.
+// Because the parent clips it, it looks like it's being revealed behind a shutter.
+function DirectionalHeading() {
+    const [slideX, setSlideX] = useState('-110%');
+
+    useEffect(() => {
+        const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+        setSlideX(isRtl ? '110%' : '-110%');
+    }, []);
+
+    return (
+        <div style={{ overflow: 'hidden', display: 'inline-block' }}>
+            <motion.h1
+                className="elementor-heading-title elementor-size-default text-5xl md:text-6xl font-extrabold text-white mb-6"
+                initial={{ x: slideX }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
+                Services
+            </motion.h1>
+        </div>
+    );
+}
 
 export default function Services() {
     return (
@@ -39,27 +137,13 @@ export default function Services() {
 
                             <div className="elementor-element elementor-element-5f7cf1a elementor-widget elementor-widget-heading" data-id="5f7cf1a" data-element_type="widget" data-widget_type="heading.default">
                                 <div className="elementor-widget-container">
-                                    <motion.h1
-                                        className="elementor-heading-title elementor-size-default text-5xl md:text-6xl font-extrabold text-white mb-6"
-                                        initial={{ opacity: 0, y: 30 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.8, ease: 'easeOut' }}
-                                    >
-                                        Services
-                                    </motion.h1>
+                                    <DirectionalHeading />
                                 </div>
                             </div>
 
                             <div className="elementor-element elementor-element-bc2f01c elementor-widget elementor-widget-text-editor" data-id="bc2f01c" data-element_type="widget" data-widget_type="text-editor.default">
                                 <div className="elementor-widget-container max-w-2xl mx-auto">
-                                    <motion.p
-                                        className="text-xl text-white leading-relaxed drop-shadow-md"
-                                        initial={{ opacity: 0, y: 30 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-                                    >
-                                        <strong className="font-bold text-white">I.T.S Group</strong> offers a great variety of services, these services are not limited only to <strong className="font-bold text-white">Residential Sector</strong> which includes villas owners &amp; compounds or <strong className="font-bold text-white">Commercial Sector</strong> which includes real estate developers, touristic projects, social &amp; sporting clubs, contracting companies &amp; governmental sectors, but many more.
-                                    </motion.p>
+                                    <TypewriterParagraph />
                                 </div>
                             </div>
 
