@@ -40,10 +40,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Large image assets with Arabic filenames (Windows git limitation)
-# Re-add via Git LFS or host externally if needed
-public/assets/images/*
-!public/assets/images/orange-money.png
-!public/assets/images/Orange-time.png
-!public/assets/images/1-768x576.jpg
-!public/assets/images/banisweef-1.jpg
+# Temporary/diagnostic scripts
+build3.log
+check-live-images.js
+current_live_about_page.html
+download-partners-again.mjs
+links.txt
+live_about.html
+script.js
+temp.html
+test-local.js
+test_about.html
